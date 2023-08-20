@@ -264,7 +264,7 @@ void Flashlight_SetCookie(int iClient, bool bState)
 	g_hCookie.Set(iClient, sValue);
 }
 
-public Action OnClientCommandKeyValues(int iClient, KeyValues kvCommand)
+/* public Action OnClientCommandKeyValues(int iClient, KeyValues kvCommand)
 {
     char sCommand[64];
     kvCommand.GetSectionName(sCommand,sizeof(sCommand));
@@ -274,4 +274,4 @@ public Action OnClientCommandKeyValues(int iClient, KeyValues kvCommand)
     }
 
     return Plugin_Continue;
-}
+} */
