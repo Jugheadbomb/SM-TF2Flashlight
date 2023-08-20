@@ -41,7 +41,7 @@ public void OnPluginStart()
 
 	g_cvWidth = CreateConVar("sm_flashlight_width", "512", "Flashlight width");
 	g_cvLength = CreateConVar("sm_flashlight_length", "1024", "Flashlight length");
-	g_cvToggleSound = CreateConVar("sm_flashlight_sound", "flashlight/flashlight.wav", "Flashlight toggle sound");
+	g_cvToggleSound = CreateConVar("sm_flashlight_sound", "items/flashlight1.wav", "Flashlight toggle sound");
 	g_cvToggleSound.AddChangeHook(ToggleSound_Changed);
 
 	AutoExecConfig(true);
@@ -263,3 +263,15 @@ void Flashlight_SetCookie(int iClient, bool bState)
 	IntToString(view_as<int>(bState), sValue, sizeof(sValue));
 	g_hCookie.Set(iClient, sValue);
 }
+
+/* public Action OnClientCommandKeyValues(int iClient, KeyValues kvCommand)
+{
+    char sCommand[64];
+    kvCommand.GetSectionName(sCommand,sizeof(sCommand));
+    if (strcmp(sCommand,"+inspect_server") == 0) // Client press +inspect key.
+    {
+        Command_Toggle(iClient, 1);
+    }
+
+    return Plugin_Continue;
+} */
